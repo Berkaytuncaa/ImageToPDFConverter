@@ -4,6 +4,11 @@ from tkinter import messagebox
 from reportlab.pdfgen import canvas
 from PIL import Image
 import os
+# TODO: add a feature to select the output directory for the PDF file
+# TODO: add a feature to show the user the progress of the conversion process with a progress bar
+# TODO: turn this script into an executable using pyinstaller
+# TODO: dockerize the application
+
 
 class ImageToPDFConverter:
     def __init__(self, root):
