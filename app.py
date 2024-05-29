@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 from reportlab.pdfgen import canvas
 from PIL import Image
 import os
@@ -47,6 +48,7 @@ class ImageToPDFConverter:
            
     def convert_images_to_pdf(self):
         if not self.image_paths:
+            messagebox.showerror("Error", "No images selected.")
             return
         
         output_pdf_path = self.output_pdf_name.get() + ".pdf" if self.output_pdf_name.get() else "output.pdf"
@@ -68,9 +70,11 @@ class ImageToPDFConverter:
                 pdf.drawInlineImage(image_path, x_centered, y_centered, width=new_width, height=new_height)
                 pdf.showPage()
             except Exception as e:
-                print(f"Error processing {image_path}: {e}")
+                messagebox.showerror("Error", f"Error processing {image_path}: {e}")
             
         pdf.save()
+        
+        messagebox.showinfo("Success", "File converted successfully!")
         
 def main():
     root = tk.Tk()
