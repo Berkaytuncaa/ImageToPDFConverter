@@ -6,8 +6,8 @@ from PIL import Image
 import os
 # TODO: add a feature to select the output directory for the PDF file
 # TODO: add a feature to show the user the progress of the conversion process with a progress bar
-# TODO: turn this script into an executable using pyinstaller
 # TODO: dockerize the application
+# TODO: turn this dockerized script into an executable
 
 
 class ImageToPDFConverter:
